@@ -1,3 +1,12 @@
 h1{
     color:green;
+    padding-left: 100px;
+    padding-right: 100px;
+    border-bottom-width: 3px;
+    border-bottom:solid;
+    margin-left: 100px;
+    border-right-width: 100px;
+    border-right-style:solid;
+    border-left-style:solid; 
+    border-left-width:0px
 }
