@@ -1,0 +1,13 @@
+<personas>
+    <persona>
+        <nombre>Bryan</nombre>
+        <direccion>Alto Lucero</direccion>
+        <telefono>123456789</telefono>
+    </persona>
+    <persona>
+        <nombre>Pedro</nombre>
+        <direccion>Xalapa</direccion>
+        <telefono>987654321</telefono>
+        <correo/>
+    </persona>
+</personas>

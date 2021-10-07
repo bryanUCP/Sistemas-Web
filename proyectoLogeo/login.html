@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+     <!-- CSS only -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+     integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+</head>
+<body>
+  <h1>******* Iniciar sesion *******</h1>
+    <div class="container">
+        <form action="http://localhost:4567/hola" method="GET">
+          <!-- *********************************USUARIO************************************************************* -->  
+          <div class="mb-3">
+            <label for="usuario" class="form-label">Usuario: </label>
+            <input type="text" name="usu" class="form-control" id="usuario" placeholder="Escribe tu nombre de usuario" required>
+            <div id="emailHelp" class="form-text">Tu usuario y password son confidenciales.</div>
+          </div>
+          <!-- ********************************PASSWORD************************************************************** -->
+          <div class="mb-3">
+            <label for="password" class="form-label">Contraseña: </label>
+            <input type="password" name="pass" class="form-control" id="password" minlength="5" maxlength="10" placeholder="Escribe tu nombre de usuario" required>
+          </div>
+          <!-- ********************************RECUERDAME************************************************************** -->
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Recuérdame</label>
+          </div>
+          <!-- ********************************BOTON************************************************************** -->
+          <!-- genera un salto y no hay querystring-->
+          <a href="" class="btn btn-danger" onclick="window.alert('Boton funciona')">Validar-Datos-Mensaje</a> <!--Mensaje en pantalla-->
+          <button type="button" class="btn btn-primary" id="validar">Validar Datos</button> <!--con la id logramos recibir los datos en validacion.js-->
+        </form>
+      </div>
+      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="validacion.js"></script>
+</body>
+</html>
