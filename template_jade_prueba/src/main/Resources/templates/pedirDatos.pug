@@ -1,0 +1,40 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title Lista de Usuarios
+    link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We' crossorigin='anonymous')
+  body
+    script.
+      // document.write("ejemplo:" + window.location.href );
+      console.log("ejemplo: " + window.location.href);
+      // esto tiene toda la url desde http hasta el final
+      var url = window.location.href;
+      // esto tiene solo el query string ?nombre=valor&....&
+      var queryString = window.location.search;
+      // esto crea un objeto con propiedades
+      var parametros = new URLSearchParams(queryString);
+    h2 Lista de usuarios
+    .card(style='width: 18rem;')
+      .card-header
+        | Estudiante
+      .row
+        .col
+          ul.list-group.list-group-flush
+            li.list-group-item Nombre:
+            li.list-group-item Usuario:
+            li.list-group-item Password:
+        .col
+          ul.list-group.list-group-flush
+            li.list-group-item
+              script.
+                document.write(parametros.get('nom'));
+            li.list-group-item
+              script.
+                document.write(parametros.get('usu'));
+            li.list-group-item
+              script.
+                document.write(parametros.get('pass'));
+    a.btn.btn-danger(href='index.pug') Registrarse

@@ -1,0 +1,35 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title Login
+    // CSS only
+    link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU' crossorigin='anonymous')
+    link(rel='stylesheet' href='css/reset.css')
+    link(rel='stylesheet' href='css/animate.css')
+    link(rel='stylesheet' href='css/styles.css')
+  body
+    h1 ******* Registrarse *******
+    .container
+      form(action='templates/pedirDatos.pug.vm' method='GET')
+        // *********************************Nombre Completo*************************************************************
+        .mb-3
+          label.form-label(for='nombre') Nombre Completo: 
+          input#nombre.form-control(type='text' name='nom' placeholder='Escribe tu nombre completo' required='')
+        // *********************************USUARIO*************************************************************
+        .mb-3
+          label.form-label(for='usuario') Usuario: 
+          input#usuario.form-control(type='text' name='usu' placeholder='Escribe tu nombre de usuario' required='')
+        // ********************************PASSWORD**************************************************************
+        .mb-3
+          label.form-label(for='password') Contraseña: 
+          input#password.form-control(type='password' name='pass' minlength='5' maxlength='10' required='')
+        // ********************************BOTON**************************************************************
+        //
+          el uso del input de tipo submit realiza el envió de los datos del formulario a donde
+          apunte el action
+        input(type='submit' value='Enviar datos')
+    script(src='https://unpkg.com/axios/dist/axios.min.js')
+    script(src='js/index.js')

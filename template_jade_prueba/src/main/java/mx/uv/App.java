@@ -3,10 +3,10 @@ package mx.uv;
 import static spark.Spark.*;
 import com.google.gson.*;
 
-
-import mx.uv.datos.Usuario;
+import mx.uv.Datos.Usuario;
 import spark.ModelAndView;
-import spark.template.velocity.VelocityTemplateEngine;
+//import spark.template.velocity.VelocityTemplateEngine;
+import spark.template.jade.JadeTemplateEngine;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -52,7 +52,7 @@ public class App {
         });
 
         // do this
-        get("/pagina", (req, res) -> {
+        /*get("/pagina", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             return new VelocityTemplateEngine().render(new ModelAndView(model, "pagina.html"));
         });
@@ -62,14 +62,15 @@ public class App {
             Map<String, Object> model = new HashMap<>();
             model.put("nombre", "Que se yo!");
             return new VelocityTemplateEngine().render(new ModelAndView(model, "templates/hola.vm"));
-        });
+        });*/
 
 
         // do this
         get("/usuario", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             model.put("nombre", usuarios.values());
-            return new VelocityTemplateEngine().render(new ModelAndView(model, "templates/hola.vm"));
+            //return new VelocityTemplateEngine().render(new ModelAndView(model, "templates/hola.vm"));
+            return new JadeTemplateEngine().render(new ModelAndView(model, "templates/hola.vm"));
         });
     }
 }
