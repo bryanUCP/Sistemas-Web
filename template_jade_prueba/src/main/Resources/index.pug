@@ -13,7 +13,7 @@ html(lang='en')
   body
     h1 ******* Registrarse *******
     .container
-      form(action='templates/pedirDatos.pug.vm' method='GET')
+      form(action='' method='GET')
         // *********************************Nombre Completo*************************************************************
         .mb-3
           label.form-label(for='nombre') Nombre Completo: 
@@ -27,9 +27,9 @@ html(lang='en')
           label.form-label(for='password') Contraseña: 
           input#password.form-control(type='password' name='pass' minlength='5' maxlength='10' required='')
         // ********************************BOTON**************************************************************
-        //
-          el uso del input de tipo submit realiza el envió de los datos del formulario a donde
-          apunte el action
-        input(type='submit' value='Enviar datos')
+        
+        button#btnEnviar(type='button') Enviar
+        span
+      ul#usuarios
     script(src='https://unpkg.com/axios/dist/axios.min.js')
     script(src='js/index.js')
