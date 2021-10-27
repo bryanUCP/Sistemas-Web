@@ -4,6 +4,7 @@ var id;
 var btnEnviar = document.getElementById("btnEnviar");
 btnEnviar.addEventListener("click", () => {
     axios.post("https://deployment-bucp.herokuapp.com/enviar", {
+      //axios.post("http://localhost:4567/enviar", {
         email: document.getElementById("email").value,
         password: document.getElementById("password").value
     })
@@ -17,7 +18,7 @@ btnEnviar.addEventListener("click", () => {
         })
 });
 
-var btnLista = document.getElementById("btnLista");
+/*var btnLista = document.getElementById("btnLista");
 btnLista.addEventListener("click", () => {
     let params = new URLSearchParams();
     params.append("email", correo);
@@ -43,9 +44,10 @@ btnTabla.addEventListener("click", () => {
             }
         })
         .catch()
-})
+})*/
 
 var btnRedireccion = document.getElementById("btnRedireccion");
 btnRedireccion.addEventListener("click", () => {
-    window.location.replace("http://localhost:4567/hola");
+    window.location.replace("https://deployment-bucp.herokuapp.com/usuario");
+    //window.location.replace("http://localhost:4567/usuario");
 });

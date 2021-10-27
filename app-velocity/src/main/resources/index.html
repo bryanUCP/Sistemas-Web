@@ -1,3 +1,4 @@
+<!--
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,5 +22,49 @@
     </span>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="js/index.js"></script>
+</body>
+</html>
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+     <!-- CSS only -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+     integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+</head>
+<body>
+<h1>******* Correos de estudiantes *******</h1>
+<h4>------- Registre su correo con su contraseña......</h4>
+    <div class="container">
+        <form action="">
+          <!-- *********************************USUARIO************************************************************* -->  
+          <div class="mb-3">
+            <label for="usuario" class="form-label">Correo Electronico: </label>
+            <input type="text" name="" class="form-control" id="email" placeholder="Escribe tu correo" required>
+          </div>
+          <!-- ********************************PASSWORD************************************************************** -->
+          <div class="mb-3">
+            <label for="password" class="form-label">Contraseña: </label>
+            <input type="password" name="" class="form-control" id="password" minlength="5" maxlength="10" required>
+          </div>
+          <!-- ********************************BOTON************************************************************** -->
+          <button type="button" id="btnEnviar">Enviar</button>
+          <button type="button" id="btnRedireccion">Lista de correos</button>
+        </form>
+        <span>
+            <ul id="usuarios"></ul>
+        </span>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="js/index.js"></script>
 </body>
 </html>

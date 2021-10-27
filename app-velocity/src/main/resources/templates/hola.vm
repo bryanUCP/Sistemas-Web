@@ -2,7 +2,7 @@
   <body>
   #set( $foo = "Velocity" )
   #foreach($u in $nombre)
-      Hello $u.email World! <br>
+      Correo: $u.email <br>
   #end
   </body>
 </html>
