@@ -1,15 +1,18 @@
 var correo;
 var id;
+var n;
 
 var btnEnviar = document.getElementById("btnEnviar");
 btnEnviar.addEventListener("click", () => {
     axios.post("https://deployment-bucp.herokuapp.com/enviar", {
       //axios.post("http://localhost:4567/enviar", {
+        nombre : document.getElementById("nombre").value,
         email: document.getElementById("email").value,
         password: document.getElementById("password").value
     })
         .then(function (res) {
             alert("Usuario:" + res.data.status + " id:" + res.data.id);
+            n = document.getElementById("nombre").value;
             correo = document.getElementById("email").value;
             id = res.data.id;
         })
