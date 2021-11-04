@@ -46,6 +46,43 @@ public class DAO {
         }
         return msj;
     }
+//---------------------------------------------------------------------------------------------------------------
+
+public String eliminarusuario(Usuario u) {
+    Connection conn = null;
+    PreparedStatement prestm = null;
+    String msj = "";
+
+    conn = conexion.getConnection();
+    try {
+        //String sql = "INSERT INTO usuario (id, email, password) VALUES (?, ?, ?)";
+        String sql = "DELETE FROM usuario WHERE email = '"+u.getEmail()+"'";
+        prestm = conn.prepareStatement(sql);
+        if (prestm.executeUpdate() >0) 
+            msj = "Usuario Eliminado";
+        else
+            msj = "No se elimino el usuario";
+        
+    } catch (Exception e) {
+        e.printStackTrace();
+    } finally {
+        if (prestm != null){
+            try {
+                prestm.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        try {
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    return msj;
+}
+
+//---------------------------------------------------------------------------------------------------------------
 
     public List<Usuario> listadoUsuario() {
         Statement stm = null;

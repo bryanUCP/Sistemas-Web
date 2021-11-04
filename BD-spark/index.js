@@ -12,6 +12,20 @@ btnRegistrar.addEventListener("click", () => {
         })
 });
 
+var btnEliminar = document.getElementById("btnEliminar");
+btnEliminar.addEventListener("click", () => {
+    axios.post("http://localhost:4567/usuario", {
+        email: document.getElementById("email").value,
+        password: document.getElementById("password").value
+    })
+        .then(function (res) {
+            alert("Usuario:" + res.data.status + " id:" + res.data.id);
+        })
+        .catch(function (error) {
+            console.log(error)
+        })
+});
+
 var btnLista = document.getElementById("btnLista");
 btnLista.addEventListener("click", function () {
     axios.get("http://localhost:4567/usuarios")

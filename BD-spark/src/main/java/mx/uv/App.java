@@ -39,11 +39,11 @@ public class App
 
         before((request, response) -> response.header("Access-Control-Allow-Origin", "*"));
 
-        get("/", (req, res) -> {
+        /*get("/", (req, res) -> {
             return null;
-        });
+        });*/
 
-        post("/usuario", (req, res) -> {
+        /*post("/usuario", (req, res) -> {
             // Insertamos un nuevo usuario
             String json = req.body();
             Usuario u = gson.fromJson(json, Usuario.class);
@@ -54,6 +54,20 @@ public class App
             DAO dao = new DAO();
             JsonObject respuesta = new JsonObject();
             respuesta.addProperty("status", dao.insertarUsuario(u));
+            respuesta.addProperty("id", id);
+            return respuesta;
+        });*/
+
+        post("/usuario", (req, res) -> {
+            String json = req.body();
+            Usuario u = gson.fromJson(json, Usuario.class);
+            String id = UUID.randomUUID().toString();
+            u.setId(id);
+            //usuarios.put(id, u);
+
+            DAO dao2 = new DAO();
+            JsonObject respuesta = new JsonObject();
+            respuesta.addProperty("status", dao2.eliminarusuario(u));
             respuesta.addProperty("id", id);
             return respuesta;
         });
