@@ -43,6 +43,7 @@ public class App
             return null;
         });*/
 
+        //Agregar usuario
         /*post("/usuario", (req, res) -> {
             // Insertamos un nuevo usuario
             String json = req.body();
@@ -58,6 +59,7 @@ public class App
             return respuesta;
         });*/
 
+        //Eliminar un usuario
         post("/usuario", (req, res) -> {
             String json = req.body();
             Usuario u = gson.fromJson(json, Usuario.class);
